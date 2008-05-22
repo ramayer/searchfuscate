@@ -1,0 +1,65 @@
+<html>
+<head>
+<link   href="js/searchfuscate.css" rel="Stylesheet" type="text/css" />
+</head>
+<body>
+ 
+ <ol class='faq1' style='list-style-type: upper-roman'>
+  <li>Privacy Questions</li>
+  <ol class='faq2'>
+      <li><b>What problem does Searchfuscate address.</b><br>
+          Google and your ISP probably know everything about you.  Searchfuscate is the easiest and one of the safest ways of protecting your privacy from search engines and your ISP.
+      </li>
+      <li><b>Why should I be concerned about the privacy of my searches.</b><br>
+
+          Have you ever googled anything related to politics or a political party or religion?  Countries everywhere go through phases of banning organizations and cracking down on people affiliated with them; ranging from the Falun Gong in China to the Comunist party in the US in the 50's.
+
+          Yahoo in particular has [TODO: fill in news about yahoo]
+
+          Have you ever googled anything related to a health problem you or a family member had?  Insurance companies would love to buy that information; to find reasons to raise your rates or deny you insurance.  
+      </li>
+
+  Have you ever googled 
+
+      <li><b>How does Searchfuscate protect your privacy.</b><br>
+      
+      </li>
+      <li><b>How does Searchfuscate protect to anonymizing proxy servers</b><br>
+      </li>
+      <li><b>How does Searchfuscate compare to tor.</b><br>
+      </li>
+  </ol>
+  <li>Ethics Questions</li>
+    <ol class='faq2'>
+      <li><b>Don't people say framing and deep linking might be unethical?</b><br>
+      Indeed, there are many <a href='http://en.wikipedia.org/wiki/Framing_%28World_Wide_Web%29#Criticism'>criticisims of framing</a> (what Searchfuscate does) and <a href="http://en.wikipedia.org/wiki/Deep_linking#Criticism">deep linking</a>(what the frames within Searchfuscate do).  Lawsuits come up in these areas mostly when one site tries to pass of content from another site as thier own, or run ads trying to monitize someone else's content.  So far we couldn't find another technological solution that helps preserve your privacy as much as iframes.
+      </li>
+      <li><b>I'm concerned that the obfuscating searches might cost my favorite search engine or ISP more money?</b><br>
+      Yes, adding obfuscating searches to the ones you manually do will increase the bandwidth and server load slightly.   If you're very concerrned about this, contact us and we'll work with you on a way for you to give anonymous donations to Google or AT&T (who carries most of the traffic) or Microsoft or whichever of these companies you're so worried about to make up for the costs you're inflicting on them.
+      </li>
+    </ol>
+  <li>Technology Questions</li>
+    <ol class='faq2'>
+      <li><b>How can I be sure the search engines can't tell the difference between my manual searches and the automated ones?</b><br>
+      Look at our source code.   The exact same javascript function is used regardless of whether you typed the search term or if the term was a randomly selected on.  However be aware that if you type into the individual search engine's search forms they <b>CAN</b> distinguish those requests from the obfuscating requests.
+      </li>
+      <li><b>How about when I click on URLs - can the search engines know that I clicked on one?</b><br>
+      Yes!   Google does something especially tricky, by using javascript to rewite the url on the "mousedown" event to a tracking url just as you're clicking on a link.    The safest way to go to the page you want is to copy&paste the URL shown by the search engine directly into your browser.<br>
+      <b>UPDATE</b> - this is less of a problem now.  Searchfuscate now protects against this too.  Searchfuscate will periodically requst a search-result-tracking-URL for each of the major search engines that use one; so the search engines will have a harder time distinguishing real searches from fake ones.   Unlike the queries, though, this isn't totally foolproof because when Searchfuscate makes such requests there are slight differences in the HTTP headers that could distinguish the requests, so your're still safer copy&pasting very sensitive URLs (like clicking on Falun Gong related urls from China).
+      </li>
+
+      <li><b>Can a search engine know I'm responsible for a term if I'm the only one on the whole internet who searched for a term?</b><br>
+      Nope.   When you search for a new term, it gets added to the pool of random terms so quickly other people around the internet will be seen searching for the same term.
+      </li>
+      <li><b>Can a search engine know I'm responsible for a term if I'm the <i>first</i> one on the whole internet who searched for a term?</b><br>
+      Nope.   We also harvest search terms from recent news articles; other search engines; a random phrase generator; and other sources; so even if you're the first person every to google a phrase, there's still no way Google can know it wasn't random.
+      </li>
+
+      <li><b>I hate frames.  Why are you guys using iframes?</b><br>
+      Iframes were the best technological solution we could find to protect your privacy.<br>
+      In order to send the search engines HTTP requests where they can not distinguish between manually typed terms made by the user, and the obfuscating noise terms made by Searchfuscate, we needed to use the same javascript function to generate both types of requests.  Setting the source of iframes generates a nice clean request with no 'referrer'; doesn't pop up new windows (which is even more annoying).  Search APIs (for the subset of engines that even have them) might have been possible; but the privacy implicatins of sucking in their javascript which could let them differentiate between the random obfuscating terms and the manually entered ones.
+      </li>
+    </ol>
+ </ol>
+
+</tl>

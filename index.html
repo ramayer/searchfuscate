@@ -1,0 +1,47 @@
+<html>
+<head>
+	<link	href="css/searchfuscate.css" rel="Stylesheet" type="text/css" />
+	<script src="js/prototype.js" type="text/javascript"></script>
+	<script src="js/searchfuscate.js" type="text/javascript"></script>
+</head>
+<body>
+	<table width='100%'><tr><td>
+		<form onsubmit="perform_search($('txt').value);return false;">
+		<table><tr>
+		<td>Search Safely:</td>
+		<td><input id="txt" type='text' size='41'></td>
+		<td><input type="submit" value="Search Safely" name="btnG"/></td>
+		</tr></table>
+		</form>
+	</td><td width='300'>
+		<span id='headmsg'>
+			Searchfuscate needs javascript to be enabled to work protect your privacy. 
+			<a href="faq.html">Read Why.</a>
+		</span>
+	</td></tr></table>
+	<div>
+		<ul class="cleantab" id="tabs">
+		<li><span id="t_Google"><a href="javascript:set_tab('Google')">Google</a></span></li>
+		<li><span id="t_MSN"><a href="javascript:set_tab('MSN')">MSN</a></span></li>
+		<li><span id="t_Yahoo"><a href="javascript:set_tab('Yahoo')">Yahoo</a></span></li>
+		<li><span id="t_Ask"><a href="javascript:set_tab('Yahoo')">Yahoo</a></span></li>
+		<li><span id="t_dishAdish"><a href="javascript:set_tab('dishAdish')">dishAdish</a></span></li>
+		</ul>
+	</div>
+	<div id="engines">
+		<iframe id="Searchfuscate" src="faq.html"></iframe>
+		<iframe id="MSN" src="http://search.msn.com/results.aspx?q=searchfuscate&FORM=MSNH"></iframe>
+		<iframe id="Google" src="http://www.google.com/search?hl=en&q=searchfuscate&btnG=Google+Search"></iframe>
+		<iframe id="Yahoo" src="http://search.yahoo.com/search?p=searchfuscate&fr=yfp-t-501&toggle=1&cop=mss&ei=UTF-8"></iframe>
+		<iframe id="dishAdish" src="http://dishadish.com/q/ahi"></iframe>
+	</div>
+</body>
+	<script type="text/javascript">
+	//<![CDATA[
+	update_engines();
+	countdown();
+	var term = get_query_string();
+	perform_search(term);
+	//]]>
+	</script>
+</html>

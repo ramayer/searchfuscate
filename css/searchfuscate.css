@@ -1,0 +1,73 @@
+body {
+}
+
+body, p, ol, ul, td {
+ font-family: verdana, arial, helvetica, sans-serif;
+ font-size:   13px;
+ line-height: 18px;
+ margin:      0px;
+}
+
+#engines {
+ height: 90%;
+}
+
+#engines iframe {
+ width: 100%;
+ height: 100%;
+}
+
+.cleantab {
+ border-collapse: collapse;
+ height: auto;
+ line-height: normal;
+ padding: 0px 0em 0em 1em;
+ /* white-space: nowrap; // good for narrow screens (pdas), but darn IE decides to not show the whole tab if it would wrap */
+ list-style: none;
+ margin: 0;
+}
+
+.cleantab li {
+ display: inline;
+ /* white-space: nowrap; // damn IE won't show the layer */
+}
+
+.cleantab li span {
+ border-color: Black;
+ border-width: 1px 1px 0px 1px; 
+ border-style: solid solid none solid;
+ color: #235;
+ height: auto;
+ margin-right: 0.5em;
+ text-decoration: none;
+ font-size: 9pt;
+ font-weight: bold;
+ background-color: #ddd;
+ border-bottom: #235 0px solid;
+}
+
+.cleantab li span.selected {
+ background-color: #ff0;
+}
+
+.cleantab li span a {
+ text-decoration: none;
+ font-size: 9pt;
+ font-weight: bold;
+ padding: 0em 1em 0em 1em;
+ color: #235;
+}
+
+.cleantab li span a:hover {
+ color: #f00;
+}
+
+.faq1 li {
+ font-size: 12pt;
+ font-weight: bold;
+}
+
+.faq2 li {
+ font-size: 10pt;
+ font-weight: normal;
+}
