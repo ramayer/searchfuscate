@@ -5,10 +5,7 @@
 
 <InputEncoding>UTF-8</InputEncoding>
 <Image width="16" height="16">data:image/x-icon;base64,imageData</Image>
-<Url type="text/html" method="get" template="http://searchfuscate.com/?q=#{searchTerms}">
-  <Param name="paramName1" value="paramValue1"/>
-  <Param name="paramNameN" value="paramValueN"/>
-</Url>
+<Url type="text/html" method="get" template="http://searchfuscate.com/?q={searchTerms}"></Url>
 <Url type="application/x-suggestions+json" template="suggestionURL"/>
 <moz:SearchForm>searchFormURL</moz:SearchForm>
 
