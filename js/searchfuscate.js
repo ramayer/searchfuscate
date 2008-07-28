@@ -7,10 +7,11 @@ function perform_search(keyword) {
   $('e_Yahoo').src          = 'http://search.yahoo.com/search?p='+kwd+'&fr=yfp-t-501&toggle=1&cop=mss&ei=UTF-8';
   $('e_dishAdish').src      = 'http://dishAdish.com/q/'+kwd;
   $('e_Ask').src            = 'http://www.ask.com/web?q='+kwd+'&o=0&l=dir&jss=0';
+  $('e_Cuil').src           = 'http://www.cuil.com/search?q='+kwd;
   // $('Searchfuscate').src  = 'addterm.html?'+kwd;
 }
 
-var sites = ['Google','Yahoo','MSN','Ask', 'dishAdish','Searchfuscate'];
+var sites = ['Google','Yahoo','MSN','Ask','Cuil','dishAdish','Searchfuscate'];
 var timer=30;
 var paused = false;
 var nextterm = "";
