@@ -5,13 +5,12 @@ function perform_search(keyword) {
   $('e_MSN').src            = 'http://search.msn.com/results.aspx?q=' + kwd + '&FORM=MSNH';
   $('e_Google').src         = 'http://www.google.com/search?hl=en&q=' + kwd + '&btnG=Google+Search';
   $('e_Yahoo').src          = 'http://search.yahoo.com/search?p='+kwd+'&fr=yfp-t-501&toggle=1&cop=mss&ei=UTF-8';
-  $('e_dishAdish').src      = 'http://dishAdish.com/q/'+kwd;
   $('e_Ask').src            = 'http://www.ask.com/web?q='+kwd+'&o=0&l=dir&jss=0';
   $('e_Cuil').src           = 'http://www.cuil.com/search?q='+kwd;
   // $('Searchfuscate').src  = 'addterm.html?'+kwd;
 }
 
-var sites = ['Google','Yahoo','MSN','Ask','Cuil','dishAdish','Searchfuscate'];
+var sites = ['Google','Yahoo','MSN','Ask','Cuil','Searchfuscate'];
 var timer=30;
 var paused = false;
 var nextterm = "";
@@ -82,7 +81,7 @@ function countdown() {
             $('pauselink').style.backgroundColor='#ff0';
         }
     } else {
-        var headmsg  ="Searchfuscate is paused.  When unpaused searchfuscate will search for a new random term <i>('"+nextterm+"')</i> in <b>"+timer+"</b> seconds to protect your privacy <a href='javascript:faq(1)'><small>(read how this helps)</small></a> Click to <a id='pauselink' onclick='setpaused(!paused);false;' href='#'>unpause</a>.";
+        var headmsg  ="Searchfuscate is paused.  When unpaused searchfuscate will search for a new random term <i>('"+nextterm+"')</i> <b>"+timer+"</b> seconds after it is unpaused to protect your privacy <a href='javascript:faq(1)'><small>(read how this helps)</small></a> Click to <a id='pauselink' onclick='setpaused(!paused);false;' href='#'>unpause</a>.";
         Element.update('headmsg',headmsg);
     }
     if (timer<1) {
@@ -95,3 +94,36 @@ function countdown() {
     setTimeout('countdown()',1000);
 }
 
+
+function save_preferences(cookie) {
+  document.cookie =
+    'engine=testcookie; expires=Thu, 2 Aug 2001 20:47:11 UTC; path=/'
+}
+
+//
+// 
+//
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
